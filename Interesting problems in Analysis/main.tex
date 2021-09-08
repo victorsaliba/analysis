@@ -1,0 +1,249 @@
+%///////////////////////////////////////////////////////////////////////////////
+% Pacotes básicos
+\documentclass[12pt,openany]{article}
+\usepackage[lmargin=3.5cm,tmargin=3.5cm,rmargin=3.5cm,bmargin=3.5cm]{geometry}
+
+% Escrevendo em português:
+\usepackage[brazil]{babel}
+\usepackage{csquotes}
+\usepackage{epigraph}
+%\setlength\epigraphwidth{.8\textwidth}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage[T1]{fontenc}
+
+% Fontes
+\usepackage{euler}
+\usepackage{libertine}
+
+% Cabeçalhos
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt} % retirando linha
+\lhead{}
+\chead{}
+\rhead{}
+
+% Gráficos
+\usepackage{graphicx,xcolor,comment,enumerate,multirow,multicol}
+
+% Matemática
+%======================================================================
+\usepackage{amsmath,amsthm,amsfonts,amssymb,dsfont,mathtools,blindtext}
+%\everymath{\displaystyle}
+
+\theoremstyle{definition}
+\newtheorem*{obs}{Observação}
+\newtheorem{teorema}{Teorema}%[chapter]
+\newtheorem{conjectura}[teorema]{Conjectura}
+\newtheorem{notacao}[teorema]{Notação}
+%\newtheorem{proposicao}[teorema]{Proposição}
+\newtheorem*{example}{Exemplo}
+\newtheorem{lemma}[teorema]{Lema}
+%\newtheorem{corolario}[teorema]{Corolário}
+%\newtheorem{nota}[teorema]{Nota}
+\newtheorem{algoritmo}[teorema]{Algoritmo}
+\newtheorem{fato}[teorema]{Fato}
+%\newtheorem{exercicio}[teorema]{Exercício}
+\newtheorem{problema}[teorema]{Problema}
+
+\def\mathbi#1{\textbf{\em #1}}
+
+\newcommand{\hto}{\hookrightarrow}
+%======================================================================
+
+% Pacotes de referências
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+\addbibresource{mybibliography.bib}
+
+% Retira a identação dos parágrafos
+%\setlength{\parindent}{0ex}
+%///////////////////////////////////////////////////////////////////////////////
+
+%###############################################################################
+% Título
+\title{Alguns problemas interessantes em Análise}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{problema}[Princípio das Casas de Pombo]
+Se $m$ e $n$ são naturais tais que $m<n$ então não existe uma injeção $f:I_m\to I_n$.
+\end{problema}
+
+\begin{problema}[Teorema de Cantor-Bernstein-Schr\"{o}der-Banach]
+Dados os conjuntos $X$ e $Y$, suponha que existam funções injetivas $f:X\to Y$ e $g:Y\to X$. Prove que existe uma bijeção $h:X\to Y$.
+\end{problema}
+
+\begin{problema}
+Para cada $n\in\mathbb{N}$ defina $s(n)=\sum_{k=1}^n\frac{1}{k}$. Prove que que o conjunto $A=\{s(n):n\in\mathbb{N}\}$ não é limitado superiormente.
+\end{problema}
+
+\begin{problema}
+Prove que o conjunto dos números algébricos reais é enumerável.
+\end{problema}
+
+\begin{problema}
+Um \textit{corte de Dedekind} é um par ordenado $(A,B)$ onde $A$ e $B$ são subconjuntos não-vazios de números racionais, tais que $A$ não possui elemento máximo, $A\cup B=\mathbb{Q}$ e, dados $x\in A$ e $y\in B$ quaisquer, tem-se $x<y$. Prove que, num corte de Dedekind $(A,B)$, vale $\sup{A}=\inf{A}$. Seja $\mathcal{D}$ o conjunto dos cortes de Dedekind. Prove que existe uma bijeção $f:\mathcal{D}\to\mathbb{R}$.
+\end{problema}
+
+\begin{problema}
+Sejam $x_1,\ldots,x_n$ números reais positivos. Mostre que 
+\begin{equation*}
+    \frac{x_1+\cdots+x_n}{n}\le(x_1\cdots x_n)^{\frac{1}{n}}.
+\end{equation*}
+\end{problema}
+
+\begin{problema}
+Definimos o \textit{$n$-ésimo número de Fermat} como sendo $F_n = 2^{2^n} + 1$. Prove que, para todo $n\ge0$, temos
+\begin{equation*}
+    \prod_{0\le k\le n}F_k=F_{n+1}-2.
+\end{equation*}
+Prove também que se $m$ e $n$ são dois naturais distintos, então $F_m$ e $F_n$ são primos entre si. Conclua que existem infinitos números primos.
+\end{problema}
+
+\begin{problema}
+Seja $f:\mathbb{R}\to\mathbb{R}$ um isomorfismo de $\mathbb{R}$ em si mesmo. Prove que $f=\text{identidade}$. Conclua que se $K$ e $L$ são corpos ordenados completos, então existe um único isomorfismo de $K$ sobre $L$. 
+\end{problema}
+
+\begin{problema}
+Mostre que o princípio da indução e o princípio da boa ordenação são equivalentes.
+\end{problema}
+
+\begin{problema}
+Um conjunto $G$ de números reais chama-se um \textit{grupo aditivo} quando $0\in G$ e 
+$x,y\in G\Rightarrow x-y\in G$. Dessa forma, $x\in G\Rightarrow-x\in G$ e $x,y\in G 
+\Rightarrow x+y\in G$. Seja então $G\subset\mathbb{R}$ um grupo aditivo de números reais. Indiquemos com $G^+$ o conjunto dos números reais positivos pertencentes a $G$. Excetuando o caso trivial $G=\{0\}$, $G^+$ é não-vazio. Suponhamos pois $G\ne\{0\}$. Prove que, ou $G$ é denso em $\mathbb{R}$, ou então $\inf{G^+}\in G^+$ e $G=\{az:z\in\mathbb{Z}\}$. Conclua que, se $\alpha\in\mathbb{R}$ é irracional, os números reais da forma $m+n\alpha$, com $m,n\in\mathbb{Z}$, constituem um subconjunto denso em $\mathbb{R}$.
+\end{problema}
+
+\begin{problema}
+Encontre uma sequência $(x_n)$ e uma decomposição $\mathbb{N}=\mathbb{N}_1\cup\mathbb{N}_2\cup\cdots\cup\mathbb{N}_k\cup\ldots$ de $\mathbb{N}$ como reunião de uma infinidade de subconjuntos infinitos tais que, para todo $k$, a subsequência $(x_n)_{n\in\mathbb{N}_k}$ tenha limite $a$, mas não se tem $\lim x_n=a$.
+\end{problema}
+
+\begin{problema}
+Prove que toda sequência de números reais possui uma subsequência monótona. Conclua que toda sequência limitada possui uma subsequêcia convergente.
+\end{problema}
+
+\begin{problema}
+Sejam $\sum a_n$ e $\sum b_n$ séries de termos positivos. Se $\lim\frac{a_n}{b_n}=0$ e $\sum b_n$ converge então $\sum a_n$ converge. Se $\lim\frac{a_n}{b_n}=c\ne0$ então $\sum a_n$ converge se, e somente se, $\sum b_n$ converge.
+\end{problema}
+
+\begin{problema}
+Prove que o conjunto dos valores de aderência da sequência $x_n=\cos{(n)}$ é o intervalo fechado $[-1,1]$.
+\end{problema}
+
+\begin{problema}
+Sejam $a_1\ge a_2\ge\cdots\ge0$ e $s_n=a_1-a_2+\cdots+(-1)^{n-1}a_n$. Prove que a sequência $(s_n)$ é limitada e que $\limsup s_n-\liminf s_n=\lim a_n$.
+\end{problema}
+
+\begin{problema}
+Seja $E\subset\mathbb{R}$ enumerável. Consiga uma sequência cujo conjunto dos valores de aderência é $\overline{E}$. Use este fato para mostrar que todo conjunto fechado $F\subset\mathbb{R}$ é o conjunto dos valores de aderência de alguma sequência.
+\end{problema}
+
+\begin{problema}[Teorema de Lindel\"{o}f]
+Seja $X\subset\mathbb{R}$ um conjunto arbitrário. Toda cobertura de $X$ por meio de abertos possui uma subcobertura enumerável.
+\end{problema}
+
+\begin{problema}[Teorema de Baire]
+Se $F_1,F_2,F_3,\ldots,F_n,\ldots$ são fechados com interior vazio então $S=F_1\cup\cdots\cup F_n\cup\ldots$ tem interior vazio.
+\end{problema}
+
+\begin{problema}
+Uma família de conjuntos $(K_{\lambda})_{\lambda\in L}$ chama-se uma \textit{cadeia} quando, para quaisquer $\lambda,\mu\in L$ tem-se $K_{\lambda}\subset K_{\mu}$ ou $K_{\mu}\subset K_{\lambda}$. Prove que se $(K_{\lambda})_{\lambda\in L}$ é uma cadeia de compactos não-vazios então a intereseção $K=\bigcap_{\lambda\in L}K_{\lambda}$ é não-vazia (e compacta).
+\end{problema}
+
+\begin{problema}
+Um número real $a$ chama-se \textit{ponto de condensação} de um conjunto $X\subset\mathbb{R}$ quando todo intervalo de centro $a$ contém uma infinidade não-enumerável de pontos de $X$. Seja $F_0$ o conjunto dos pontos de condensação de um fechado $F\subset\mathbb{R}$. Prove que $F_0$ é um conjunto \textit{perfeito} (isto é, fechado, sem pontos isolados) e que $F\setminus F_0$ é enumerável. Conclua daí o \textit{Teorema de Bendixson}: todo fechado da reta é reunião de um conjunto perfeito com um conjunto enumerável.
+\end{problema}
+
+\begin{problema}
+Não existe $f:\mathbb{R}\to\mathbb{R}$ contínua que transforme todo número racional num irracional e vice-versa.
+\end{problema}
+
+\begin{problema}
+Dada uma função $f:X\to\mathbb{R}$, suponha que para cada $\varepsilon>0$ se possa obter uma função contínua $g:X\to\mathbb{R}$ tal que $|f(x)-g(x)|<\varepsilon$ qualquer que seja $x\in X$. Então $f$ é contínua.
+\end{problema}
+
+\begin{problema}
+Seja $f:\mathbb{R}\to\mathbb{R}$ contínua. Suponha que existam reais $a_1,a_2,\ldots,a_p$ distintos ($p\ge 2$), tais que $f(a_k)=a_{k+1}$, se $1\le k\le p-1$ e $f(a_p)=a_1$. Prove que existe pelo menos um $\overline{x}\in\mathbb{R}$ tal que $f(\overline{x})=\overline{x}$.
+\end{problema}
+
+\begin{problema}
+Seja $f:(a,b)\to\mathbb{R}$ contínua. Prove que $f$ é uniformemente contínua em $(a,b)$ se, e somente se, existem $\lim_{x\to a+}f(x)$ e $\lim_{x\to b-}f(x)$.
+\end{problema}
+
+\begin{problema}
+Se $f:(a,b)$ é uniformemente contínua então $f$ é limitada.
+\end{problema}
+
+\begin{problema}
+Se $f:\mathbb{R}\to\mathbb{R}$ é periódica então $f$ é limitada.
+\end{problema}
+
+\begin{problema}
+Seja $f:[a,b]\to\mathbb{R}$ convexa. Prove que $f$ tem máximo e que esse máximo é $f(a)$ ou $f(b)$. Prove também que $f$ é limitada superiormente.
+\end{problema}
+
+\begin{problema}
+Suponha que $f:\mathbb{R}\to\mathbb{R}$ seja de classe $\mathcal{C}^1$ e periódica de período $p>0$. Mostre que $f$ é Lipschtziana.
+\end{problema}
+
+\begin{problema}
+Sejam $f$ e $g$ funções de $\mathbb{R}$ em $\mathbb{R}$ de classe $\mathcal{C}^1$ tais que $f(0)=0$, $g(0)=1$, e $f'(x)=g(x)$, $g'(x)=-f(x)$ para todo $x\in\mathbb{R}$. Prove que $f(x)=\sin{x}$ e $g(x)=\cos{x}$ para todo $x\in\mathbb{R}$. 
+\end{problema}
+
+\begin{problema}
+Considere funções $f$ e $g$ definidas em $(-1,1)$ com valores em $\mathbb{R}$, deriváveis em $(-1,1)\setminus\{0\}$, integráveis em qualquer intervalo $[a,b]\subset(-1,1)$, com $g(x)g'(x)\ne0$ se $x\ne0$. Suponha que $f(x)$ é $o(g(x))$ para $x\to0$. Se $F(x)=\int_0^xf(t)dt$ e $G(x)=\int_0^xg(t)dt$, mostre que $F(x)$ é $o(G(x))$ para $x\to0$.
+\end{problema}
+
+\begin{problema}
+Seja $f:I\to\mathbb{R}$ de classe $\mathcal{C}^{n+1}$, com $a\in I$. Temos
+\begin{equation*}
+    f(a+h)=f(a)+f'(a)\cdot h+\cdots+\frac{f^{(n-1)(a)}}{(n-1)!}h^{n-1}+\frac{f^{(n)(a+\theta_n\cdot h)}}{n!}h^n.
+\end{equation*}
+Mais precisamente, para todo $h$ tal que $a+h\in I$, podemos encontrar $\theta_n=\theta_n(h)$, com $0<\theta_n<1$, tal que a fórmula acima vale. Mostre que, se $f^{(n+1)(a)}\ne0$, seja qual for a função $\theta_n$, definida da maneira acima, tem-se $\lim_{h\to0}\theta_n(h)=\frac{1}{n+1}$.
+\end{problema}
+
+\begin{problema}
+Demonstre que $e^2$ é irracional.
+\end{problema}
+
+\begin{problema}
+Seja $g:[a,b]\to\mathbb{R}$ uma função integrável e defina $G(x)=\int_a^xg(t)dt$, $x\in[a,b]$. Prove que $G$ é integrável.
+\end{problema}
+
+\begin{problema}
+Sejam $p>0$ e $f:\mathbb{R}\to\mathbb{R}$ uma função par, periódica de período $p$ e integrável em todo intervalo $[a,b]$ da reta. Fazendo $g(x)=\int_0^xf(t)dt$ e $A=g(p/2)$, calcule $g\left(\frac{np}{2}\right)$ em função de $A$ para todo $n\in\mathbb{N}$.
+\end{problema}
+
+\begin{problema}
+Sejam $f$ e $g$ funções definidas no intervalo $[0,1]$ tomando valores em $\mathbb{R}$, ambas limitadas. Suponha que $f$ é integrável e que $f(x)=g(x)$ se $x\in[0,1]\setminus\left\{\frac{1}{n}:n\in\mathbb{N}\right\}$. Prove que $g$ é integrável e $\int_0^1g(x)dx=\int_0^1f(x)dx$.
+\end{problema}
+
+\begin{problema}
+Sejam $n\in\mathbb{N}$ e $f:[a,b]\to(0,+\infty)$ integrável. Prove que existe uma partição $a=c_0<c_1<c_2<\cdots<c_n=b$ de $[a,b]$ tal que, para todo $j\in\{1,\ldots,n\}$, tem-se $\int_{c_{j-1}}^{c_j}f(x)dx=\frac{1}{n}\int_a^bf(x)dx$.
+\end{problema}
+
+\begin{problema}
+Sejam $a>0$, $M>0$ e $f:[0,a]\to\mathbb{R}$ duas vezes derivável, satisfazendo $|f''(x)|\le M$ para todo $x\in[0,a]$. Admita que $f(a/2)>\text{max}\{f(0),f(a)\}$ e prove que $|f'(0)+f'(a)|\le aM$.
+\end{problema}
+
+\begin{problema}
+Sejam $f:\mathbb{R}\to\mathbb{R}$, $u:\mathbb{R}\to\mathbb{R}$ e $v:\mathbb{R}\to\mathbb{R}$, com $f$ contínua, e $u$ e $v$ deriváveis. Seja $H(x)=\int_{u(x)}^{v(x)}f(t)dt$. Prove que $H$ é derivável e calcule $H'(x)$.
+\end{problema}
+
+\begin{problema}
+Seja $f:\mathbb{R}\to\mathbb{R}$ uma função integrável em todo intervalo $[a,b]\subset\mathbb{R}$ e considere $A(x)\int_0^xf(t)dt$. É verdade que $A$ é derivável? É verdade que se $f$ é derivável em $c\in\mathbb{R}$ então $A'$ é contínua em $c$?
+\end{problema}
+
+\begin{problema}
+Seja $F_{\alpha}:\mathbb{R}\to\mathbb{R}$ definida por $F_{\alpha}(x)=\sum_{n=1}^{\infty}\frac{\cos{(nx)}}{n^{\alpha}}$, com $\alpha>2$. Prove que $F_{\alpha}$ é derivável.
+\end{problema}
+
+\end{document}
